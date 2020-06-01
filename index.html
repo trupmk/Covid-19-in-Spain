@@ -1,51 +1,156 @@
-<!DOCTYPE html>
-<html>
-<title></title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<body>
-<input type = "checkbox" id = "menuButtonToggler">
-<label for = "menuButtonToggler" id = "menuButton">Open Menu!</label>
-<nav>
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>Covid19 </b> in Spain</a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="https://public.tableau.com/profile/trupti5700#!/vizhome/Covid_19_Dashboard_15904169351050/Covid19_Dashboard" class="w3-bar-item w3-button"> Dashboard </a>
-      <a href="Covid19inSpain%20(1).html" class="w3-bar-item w3-button"> Detail Analysis </a>
-      <a href="#contact" class="w3-bar-item w3-button">Document</a>
-      <a href="https://github.com/CSSEGISandData/COVID-19" onclick="https://cnecovid.isciii.es/covid19/" target="_blank" class="w3-bar-item w3-button"> Data Sources </a>
-    </div>
-  </div>
-</div>
+<!doctype html><html lang="en" dir="ltr"><head>
+    <meta charset="utf-8">
+    <title>Responsive Navbar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style type="text/css" id="dcoder_stylesheet">@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+nav{
+  background: #2d2d2d;
+  height: 80px;
+  width: 100%;
+}
+label.logo{
+  color: #f2f2f2;
+  font-size: 28px;
+  line-height: 80px;
+  padding: 0 120px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+nav ul{
+  float: right;
+  margin-right: 60px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 2px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  /* text-transform: uppercase; */
+  font-family: 'Poppins', sans-serif;
+}
+a.active,a:hover{
+  background: #1b9bff;
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  label.logo{
+    font-size: 20px;
+    padding-left: 25px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+    margin-right: 40px;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2d2d2d;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+    opacity: 1;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+section{
+  background: url(bg1.jpg) no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+</style></head>
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">COVID-19 in Spain</label>
+      <ul>
+<li>
+  <a class="active" href="#">Home</a>  
+</li>
+<li><a href="https://public.tableau.com/profile/trupti5700#!/vizhome/Covid_19_Dashboard_15904169351050/Covid19_Dashboard">
+  Dashboard</a></li>
+<li><a href="Covid19inSpain%20(1).html" target="_blank">Detailed Analysis</a></li>
+<li><a href="#">Documentation</a></li>
+<li><a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Data"a Sources</a></li>
+</ul>
 </nav>
-
-<!-- Page content -->
+  
+  <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
 
 
   <!-- About Section -->
   <div class="w3-container w3-padding-32" id="about">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+    <h2 class=" w3-padding-16">About</h2>
     <p>The first case of COVID-19 in Spain was reported 118 days ago on 2/1/2020. Since then, the country has reported 238,564 cases, and 27,121 deaths.
-	This website is all about the analysis to visualize the number of new COVID-19 cases, deaths, the PCR tests and everything.
+  This website is all about the analysis to visualize the number of new COVID-19 cases, deaths, the PCR tests and everything.
     </p>
   </div>
 
- <div class="w3-row-padding w3-grayscale">
-    <div class="w3-col l3 m6 w3-margin-bottom"> <h3 class="w3-border-bottom w3-border-light-grey"> Contributed by: </h3
+<div class="w3-row-padding w3-grayscale">
+    <div class="w3-col l3 m6 w3-margin-bottom"> <h4 class="w3-border-bottom w3-border-light-grey"> Contributed by: </h4
 	<div>
 		<h4>Pratha Jaju</h4>
 		<p>Roll no. 11013</p>
+		
 		<h4>Rugwed Bhosale</h4>
 		<p>Roll no. 11016</p>
     </div>
 	<div class="w3-col l3 m6 w3-margin-bottom w3-padding-32">
 		<h4>Sanjana Changedia</h4>
 		<p>Roll no. 11017</p>
+		
 		<h4>Trupti Kachare</h4>
 		<p>Roll no. 11028</p>
     </div>
@@ -54,5 +159,9 @@
  
 <!-- End page content -->
 </div>
-</body>
-</html>
+  
+  
+  
+  
+
+</body></html>
